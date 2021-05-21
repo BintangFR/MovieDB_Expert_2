@@ -1,0 +1,7 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favorite_movie">Favorite Movies</string>
+    <string name="favorite_tv">Favorite TV Shows</string>
+    <string name="title_favorite">Favorite</string>
+</resources>

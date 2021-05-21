@@ -1,0 +1,52 @@
+Instrumentation test :
+
+1. menampilkan data detail film
+   - memberikan tindakan klik pada baris pertama film
+   - memastikan textview title, rating, overview, genre,
+     release date, memastikan imageview film tampil sesuai yang diharapkan
+   - memberikan tindakan klik pada tombol action back
+
+2. menampilkan data film 
+   - memastikan rv_movie tampil
+   - scroll rv_movie ke baris terakhir
+
+3. menambahkan film dan menghapus film dari data favorit
+   - memastikan rv_movie tampil
+   - scroll rv_movie ke posisi 4
+   - memberikan tindakan klik pada film posisi ke 4
+   - menunggu loading detail page
+   - memberikan tindakan klik pada floating button add favorite untuk menambahkan film ke data favorit
+   - melakukan back ke halaman sebelumnya
+   - memberikan tindakan klik pada bottom nav favorite
+   - memberikan tindakan klik pada tab layout favorite movie
+   - memberikan tindakan klik pada rv_fav_movie atau film favorit posisi pertama
+   - memberikan tindakan klik pada floating button add favorite untuk menghapus film dari data favorit
+   - melakukan back ke halaman sebelumnya
+   - melakukan back ke halaman sebelumnya
+
+4. menampilkan data detail tvshow
+   - memberikan tindakan klik pada bottom nav tv show
+   - memberikan tindakan klik pada baris pertama tvshow
+   - memastikan textview title, duration, rating, overview, genre,
+     release date, memastikan imageview film tampil sesuai yang diharapkan
+   - memberikan tindakan klik pada tombol action back
+
+5. menampilkan data tv 
+   - memberikan tindakan klik pada bottom nav tv show
+   - memastikan rv_movie tampil
+   - scroll rv_movie ke baris terakhir
+
+6. menambahkan tvshow dan menghapus tvshow dari data favorit
+   - memberikan tindakan klik pada bottom nav tv show
+   - memastikan rv_movie tampil
+   - scroll rv_movie ke posisi 4
+   - memberikan tindakan klik pada film posisi ke 4
+   - menunggu loading detail page
+   - memberikan tindakan klik pada floating button add favorite untuk menambahkan tvshow ke data favorit
+   - melakukan back ke halaman sebelumnya
+   - memberikan tindakan klik pada bottom nav favorite
+   - memberikan tindakan klik pada tab layout favorite tv show
+   - memberikan tindakan klik pada rv_fav_movie atau tvshow favorit posisi pertama
+   - memberikan tindakan klik pada floating button add favorite untuk menghapus tvshow dari data favorit
+   - melakukan back ke halaman sebelumnya
+   - melakukan back ke halaman sebelumnya

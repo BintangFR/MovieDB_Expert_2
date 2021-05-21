@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MovieDB</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_tvshows">TV Shows</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="Title">Title</string>
+    <string name="ReleaseDate">Release Date</string>
+    <string name="Genre">Genre</string>
+    <string name="share">Share</string>
+    <string name="favorite">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="favorite_movie">Favorite Movies</string>
+    <string name="favorite_tv">Favorite TV Shows</string>
+</resources>
