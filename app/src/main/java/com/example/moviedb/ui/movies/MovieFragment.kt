@@ -11,12 +11,14 @@ import com.example.moviedb.core.domain.model.DataModels
 import com.example.moviedb.core.interfaces.UserInterface
 import com.example.moviedb.core.vo.Resource
 import com.example.moviedb.databinding.FragmentMovieBinding
+import com.example.moviedb.databinding.FragmentTVShowsBinding
 import com.example.moviedb.ui.details.DetailsActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class MovieFragment : Fragment(), UserInterface {
-    private lateinit var binding: FragmentMovieBinding
+    private var _binding: FragmentMovieBinding?= null
+    private val binding: FragmentMovieBinding get() = _binding!!
     private lateinit var adapter: MovieAdapter
     private val viewModel: MovieViewModel by viewModel()
     override fun onCreateView(
@@ -25,7 +27,7 @@ class MovieFragment : Fragment(), UserInterface {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentMovieBinding.inflate(layoutInflater)
+        _binding = FragmentMovieBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -66,7 +68,7 @@ class MovieFragment : Fragment(), UserInterface {
     private fun showLoading(state: Boolean) {
         if (state) {
             binding.progressBarMovies.visibility = View.VISIBLE
-            binding.progressBarMovies.setProgress(100f)
+            //binding.progressBarMovies.setProgress(100f)
             binding.rvMovies.visibility = View.GONE
         } else {
             binding.progressBarMovies.visibility = View.GONE
@@ -74,5 +76,11 @@ class MovieFragment : Fragment(), UserInterface {
         }
     }
 
+    override fun onDestroyView() {
+        binding.rvMovies.adapter = null
+        _binding = null
+
+        super.onDestroyView()
+    }
 
 }

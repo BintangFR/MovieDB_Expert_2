@@ -13,11 +13,13 @@ import com.example.moviedb.R
 import com.example.moviedb.core.domain.model.DataModels
 import com.example.moviedb.core.vo.Resource
 import com.example.moviedb.databinding.ActivityDetailsBinding
+import com.example.moviedb.databinding.FragmentMovieBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DetailsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDetailsBinding
+    private var _binding: ActivityDetailsBinding?= null
+    private val binding: ActivityDetailsBinding get() = _binding!!
     private lateinit var dataModels: DataModels
     private val viewModel: DetailsViewModel by viewModel()
     private var isFavorite = false
@@ -30,7 +32,7 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailsBinding.inflate(layoutInflater)
+        _binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -157,6 +159,13 @@ class DetailsActivity : AppCompatActivity() {
             item.icon = getDrawable(R.drawable.ic_baseline_favorite_border_24)
         }
     }
+
+
+    override fun onDestroy() {
+        _binding = null
+        super.onDestroy()
+    }
+
 
 
 }

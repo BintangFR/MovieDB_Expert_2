@@ -4,6 +4,14 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
 }
+apply plugin: 'com.android.application'
+apply plugin: 'com.squareup.leakcanary.deobfuscation'
+leakCanary {
+    // LeakCanary needs to know which variants have obfuscation turned on
+    filterObfuscatedVariants { variant ->
+        variant.name == "debug"
+    }
+}
 apply from: '../shared_dependencies.gradle'
 
 android {
@@ -12,7 +20,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.moviedb"
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -144,6 +152,8 @@ dependencies {
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+    implementation 'com.github.ibrahimsn98:CirclesLoadingView:1.0'
 
 
 }

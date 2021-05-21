@@ -16,8 +16,10 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class TVShowsFragment : Fragment(), UserInterface {
-    private lateinit var binding: FragmentTVShowsBinding
+
     private lateinit var adapter: TVShowsAdapter
+    private var _binding: FragmentTVShowsBinding ?= null
+    private val binding: FragmentTVShowsBinding get() = _binding!!
     private val viewModel: TVShowsViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +27,7 @@ class TVShowsFragment : Fragment(), UserInterface {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentTVShowsBinding.inflate(layoutInflater)
+        _binding = FragmentTVShowsBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -65,11 +67,18 @@ class TVShowsFragment : Fragment(), UserInterface {
     private fun showLoading(state: Boolean) {
         if (state) {
             binding.progressBarTvShows.visibility = View.VISIBLE
-            binding.progressBarTvShows.setProgress(100f)
+            //binding.progressBarTvShows.setProgress(100f)
             binding.rvTVShows.visibility = View.GONE
         } else {
             binding.progressBarTvShows.visibility = View.GONE
             binding.rvTVShows.visibility = View.VISIBLE
         }
+    }
+
+    override fun onDestroyView() {
+        binding.rvTVShows.adapter = null
+        _binding = null
+
+        super.onDestroyView()
     }
 }
